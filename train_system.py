@@ -219,7 +219,7 @@ def main():
     with open("trained_models.json", "w") as f:
         json.dump(models, f, indent=2)
     
-    print("\n✓ Models saved to trained_models.json")
+    print("\n  Models saved to trained_models.json")
     print("\nSummary:")
     print("Bird detector:       %.0f-%.0f Hz" % (bird_model['filter_params']['low_freq'], bird_model['filter_params']['high_freq']))
     print("Motorcycle detector: %.0f-%.0f Hz" % (motorcycle_model['filter_params']['low_freq'], motorcycle_model['filter_params']['high_freq']))

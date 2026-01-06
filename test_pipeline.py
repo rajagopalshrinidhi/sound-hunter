@@ -35,7 +35,7 @@ def test_pipeline():
             "filter_params": filter_params
         })
         
-        print("✓ Filter applied")
+        print("  Filter applied")
         print("  - Energy: %.2f" % filter_result['filter_energy'])
         print("  - Peak frequency: %.2f Hz" % filter_result['peak_frequency'])
     
@@ -46,7 +46,7 @@ def test_pipeline():
             "sample_rate": filter_result["sample_rate"]
         })
         
-        print("✓ Features extracted: %d features" % len(feature_result['feature_vector']))
+        print("  Features extracted: %d features" % len(feature_result['feature_vector']))
     
     with tesseract_core.Tesseract.from_image("pattern-detector:latest") as pattern_detector:
         # Step 3: Pattern detection (comparing to itself for demo)
@@ -56,7 +56,7 @@ def test_pipeline():
             "detection_threshold": 0.8
         })
         
-        print("✓ Pattern detection complete")
+        print("  Pattern detection complete")
         print("  - Match: %s" % detection_result['is_match'])
         print("  - Confidence: %.1f%%" % (detection_result['confidence'] * 100))
     
@@ -76,7 +76,7 @@ def test_pipeline():
     #                 ["filter_params.low_freq", "filter_params.high_freq"],
     #                 ["filter_energy"]
     #             )
-    #             print("✓ Gradients computed (nested fields):")
+    #             print("  Gradients computed (nested fields):")
     #         except Exception as e1:
     #             # Second try: Just the parent field
     #             try:
@@ -89,12 +89,12 @@ def test_pipeline():
     #                     ["filter_params"],
     #                     ["filter_energy"]
     #                 )
-    #                 print("✓ Gradients computed (parent field):")
+    #                 print("  Gradients computed (parent field):")
     #             except Exception as e2:
     #                 print(f"⚠ Gradient computation format issue")
     #                 print(f"  Error 1: {e1}")
     #                 print(f"  Error 2: {e2}")
-    #                 print("\n✓ Main pipeline works! Gradient computation is optional.")
+    #                 print("\n  Main pipeline works! Gradient computation is optional.")
     #                 return True
             
     #         # Display gradients if successful
@@ -110,7 +110,7 @@ def test_pipeline():
                 
     # except Exception as e:
     #     print(f"⚠ Gradient computation not available: {e}")
-    #     print("\n✓ Main pipeline works! Gradient computation is optional.")
+    #     print("\n  Main pipeline works! Gradient computation is optional.")
     
     return True
 

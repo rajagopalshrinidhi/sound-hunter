@@ -130,8 +130,24 @@ python demo_retrain.py
 
 # Cleanup Docker containers to free ports
 echo -e "\n${YELLOW}Cleaning up Docker containers...${NC}"
-docker ps -aq --filter ancestor=audio-filter:latest | xargs docker rm -f 2>/dev/null || true
-docker ps -aq --filter ancestor=feature-extractor:latest | xargs docker rm -f 2>/dev/null || true
-docker ps -aq --filter ancestor=pattern-detector:latest | xargs docker rm -f 2>/dev/null || true
+
+# Stop and remove containers using conflicting ports
+CONFLICTING_PORTS=(62630 63134)
+for PORT in "${CONFLICTING_PORTS[@]}"; do
+    CONTAINER_ID=$(docker ps --filter "publish=$PORT" --format "{{.ID}}")
+    if [[ -n "$CONTAINER_ID" ]]; then
+        echo -e "${YELLOW}Stopping and removing container using port $PORT...${NC}"
+        docker stop "$CONTAINER_ID" && docker rm "$CONTAINER_ID"
+    fi
+done
+
+# Remove containers based on specific images
+IMAGES=("audio-filter:latest" "feature-extractor:latest" "pattern-detector:latest")
+for IMAGE in "${IMAGES[@]}"; do
+    if docker images | grep -q "$IMAGE"; then
+        echo -e "${YELLOW}Removing containers for image $IMAGE...${NC}"
+        docker ps -aq --filter ancestor="$IMAGE" | xargs docker rm -f 2>/dev/null || true
+    fi
+done
 
 echo -e "${GREEN}Setup and demo complete!${NC}"

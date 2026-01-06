@@ -1,6 +1,15 @@
-# Sound Hunter 🎵
+# Sound Hunter
 
 A differentiable audio processing pipeline built with Tesseract for intelligent sound analysis and synthesis.
+
+## Team
+
+Shrinidhi Rajagopal
+
+## License
+
+Licensed under Apache 2.0
+
 
 ## Overview
 
@@ -24,7 +33,7 @@ Audio Input → Preprocessing → Feature Extraction → ML Model → Post-proce
 ## Quick Start
 
 ### Prerequisites
-- Python 3.11+
+- Python 3.10+
 - Docker
 - Tesseract framework
 - Audio processing dependencies
@@ -33,7 +42,7 @@ Audio Input → Preprocessing → Feature Extraction → ML Model → Post-proce
 
 ```bash
 # Clone the repository
-git clone https://github.com/[your-username]/sound-hunter.git
+git clone https://github.com/rajagopalshrinidhi/sound-hunter.git
 cd sound-hunter
 
 # Run setup script (handles virtual environment and dependencies)
@@ -42,15 +51,23 @@ cd sound-hunter
 
 ### Basic Usage
 
-```python
-from sound_hunter import SoundHunterPipeline
+```markdown
+```bash
+# Run the Sound Hunter pipeline
+./run.sh
+```
 
-# Initialize pipeline
-pipeline = SoundHunterPipeline()
+The `run.sh` script performs the following tasks:
+1. **Python Version Check**: Ensures Python 3.10+ is installed, and installs it if necessary.
+2. **Virtual Environment Setup**: Creates and activates a virtual environment for dependency isolation.
+3. **Dependency Installation**: Installs required Python packages from `requirements.txt`.
+4. **Component Build**: Executes `build_components.sh` to build necessary components.
+5. **Pipeline Testing**: Runs `test_pipeline.py` to verify basic functionality.
+6. **Model Training**: Trains the system using `train_system.py`.
+7. **Demo Retraining**: Demonstrates retraining with `demo_retrain.py`.
+8. **Docker Cleanup**: Stops and removes conflicting Docker containers and images.
 
-# Process audio file
-result = pipeline.process("input_audio.wav")
-print(f"Detected sounds: {result.classifications}")
+This script ensures a seamless setup and execution of the Sound Hunter pipeline.
 ```
 
 ## Tesseract Integration
@@ -108,21 +125,3 @@ python demo_retrain.py     # Demo with retraining
 - Extension to multi-modal audio-visual processing
 - Deployment as edge computing solution
 - Enhanced differentiable audio synthesis
-
-## Hackathon Submission
-
-This project was developed for the **Tesseract Hackathon (Dec 6, 2025 - Jan 5, 2026)**.
-
-**Team**: [Your name/team]  
-**Category**: Audio Processing & Inverse Problems  
-**Tags**: #TesseractHackathon #DifferentiableProgramming #AudioML
-
-## License
-
-Licensed under Apache 2.0 (hackathon requirement).
-
-## Acknowledgments
-
-- Tesseract framework by Pasteur Labs
-- Audio datasets from [specify sources]
-- Inspiration from differentiable programming research
