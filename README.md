@@ -49,14 +49,6 @@ cd sound-hunter
 ./run.sh
 ```
 
-### Basic Usage
-
-```markdown
-```bash
-# Run the Sound Hunter pipeline
-./run.sh
-```
-
 The `run.sh` script performs the following tasks:
 1. **Python Version Check**: Ensures Python 3.10+ is installed, and installs it if necessary.
 2. **Virtual Environment Setup**: Creates and activates a virtual environment for dependency isolation.
