@@ -167,30 +167,27 @@ Each component follows Tesseract's API with Pydantic schemas:
 #### 4.2.1 Learned Filter Parameters
 
 Training results show the system learned distinct frequency ranges:
+### 4.2.1 Learned Filter Parameters
 
-------------------------------------------------------------
-Detector        Test Sound      Detection    Confidence
-------------------------------------------------------------
+The following table summarizes the detection performance of the learned filters for different sound types:
 
-BIRD DETECTOR (Filter: 1792-1842 Hz)
-                bird              DETECTED   99.3%
-                motorcycle        DETECTED   89.8%
-                whistle           DETECTED   92.6%
-                noise             DETECTED   97.7%
-
-MOTORCYCLE DETECTOR (Filter: 188-238 Hz)
-                bird              DETECTED   93.0%
-                motorcycle         Rejected  23.8%
-                whistle            Rejected  14.5%
-                noise             DETECTED   92.8%
-
-WHISTLE DETECTOR (Filter: 1541-1591 Hz)
-                bird              DETECTED   96.8%
-                motorcycle        DETECTED   99.8%
-                whistle           DETECTED   87.2%
-                noise             DETECTED   81.0%
-
-============================================================
+| Detector               | Test Sound   | Detection Result | Confidence (%) |
+|------------------------|--------------|------------------|----------------|
+| **BIRD DETECTOR**      |              |                  |                |
+| (Filter: 1792-1842 Hz) | Bird         | DETECTED         | 99.3           |
+|                        | Motorcycle   | DETECTED         | 89.8           |
+|                        | Whistle      | DETECTED         | 92.6           |
+|                        | Noise        | DETECTED         | 97.7           |
+| **MOTORCYCLE DETECTOR**|              |                  |                |
+| (Filter: 188-238 Hz)   | Bird         | DETECTED         | 93.0           |
+|                        | Motorcycle   | Rejected         | 23.8           |
+|                        | Whistle      | Rejected         | 14.5           |
+|                        | Noise        | DETECTED         | 92.8           |
+| **WHISTLE DETECTOR**   |              |                  |                |
+| (Filter: 1541-1591 Hz) | Bird         | DETECTED         | 96.8           |
+|                        | Motorcycle   | DETECTED         | 99.8           |
+|                        | Whistle      | DETECTED         | 87.2           |
+|                        | Noise        | DETECTED         | 81.0           |
 
 #### 4.2.2 Detection Performance
 
