@@ -1,0 +1,4 @@
+name: feature-extractor
+version: 1.0.0
+description: Extract acoustic features from audio
+# runtime: python:3.10

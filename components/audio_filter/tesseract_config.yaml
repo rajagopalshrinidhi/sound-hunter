@@ -1,0 +1,4 @@
+name: audio-filter
+version: 1.0.0
+description: Learnable audio bandpass filter with gradient support
+# runtime: python:3.10
