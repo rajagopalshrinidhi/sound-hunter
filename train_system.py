@@ -52,10 +52,27 @@ def train_detector(audio_samples, labels, target_sound, epochs=20):
     print("Positive examples: %d" % labels.count(target_sound))
     
     # Initialize filter parameters
-    filter_params = {
-        "low_freq": 500,   # Start in middle range
-        "high_freq": 2000
-    }
+    # Initialize filter parameters based on sound type
+    if target_sound == "motorcycle":
+        filter_params = {
+            "low_freq": 50,    # Start low for engine rumbles
+            "high_freq": 500
+        }
+    elif target_sound == "bird":
+        filter_params = {
+            "low_freq": 800,   # Start high for chirps
+            "high_freq": 2000
+        }
+    elif target_sound == "whistle":
+        filter_params = {
+            "low_freq": 1000,  # Start mid-high for pure tones
+            "high_freq": 2000
+        }
+    else:
+        filter_params = {
+            "low_freq": 500,   # Default
+            "high_freq": 2000
+        }
     
     # Collect target patterns for later detection
     target_patterns = []
