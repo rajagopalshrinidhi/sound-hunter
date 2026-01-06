@@ -68,7 +68,7 @@ The `run.sh` script performs the following tasks:
 8. **Docker Cleanup**: Stops and removes conflicting Docker containers and images.
 
 This script ensures a seamless setup and execution of the Sound Hunter pipeline.
-```
+
 
 ## Tesseract Integration
 
