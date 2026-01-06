@@ -36,7 +36,6 @@ Audio Input → Preprocessing → Feature Extraction → ML Model → Post-proce
 - Python 3.10+
 - Docker
 - Tesseract framework
-- Audio processing dependencies
 
 ### Installation
 
