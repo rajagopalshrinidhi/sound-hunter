@@ -64,7 +64,7 @@ def main():
         
         for test_sound in test_sounds:
             is_match, confidence = test_detection(test_sound, model)
-            status = "✓ DETECTED" if is_match else "✗ Rejected"
+            status = "  DETECTED" if is_match else "   Rejected"
             print("%-15s %-15s %-12s %.1f%%" % ("  ", test_sound, status, confidence * 100))
     
     print("\n" + "="*60)

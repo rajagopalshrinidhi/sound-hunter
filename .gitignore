@@ -1,1 +1,4 @@
 *venv/*
+trained_models.*
+.DS_Store
+trained_models.json
